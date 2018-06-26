@@ -1,15 +1,22 @@
-'''
-5000 samples of housing information. 
-
-Features include Average Area Income, Average Area House Age, Average Area No of Rooms, Area Population
 
 '''
+Machine Learning Program to Predict Survival in Titanic Ship
+Program domestrate how to train  Logistical Regression to predict outcomes 
+Data        ---  5000 samples of housing data 
+Features    ---   Average Area Income, Average Area House Age, Average Area No of Rooms, Area Population
+Target      ---  Price
+
+'''
+
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-%matplotlib inline
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn import metrics
+
 USAhousing = pd.read_csv('USA_Housing.csv')
 # get basic information about the dataset
 USAhousing.head()
@@ -39,12 +46,12 @@ y = USAhousing['Price']
 
 #Create train and est sets using Train Test Split, 40% test data and 60% training data
 
-from sklearn.model_selection import train_test_split
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=101)
 
 
 # Train Model
-from sklearn.linear_model import LinearRegression
+
 lm = LinearRegression()
 lm.fit(X_train,y_train)
 
@@ -63,7 +70,7 @@ plt.scatter(y_test,predictions)
 sns.distplot((y_test-predictions),bins=50);
 
 # Model Evaluation - Metrics MSE-RMSE-MAE
-from sklearn import metrics
+
 print('MAE:', metrics.mean_absolute_error(y_test, predictions))
 print('MSE:', metrics.mean_squared_error(y_test, predictions))
 print('RMSE:', np.sqrt(metrics.mean_squared_error(y_test, predictions)))
