@@ -1,7 +1,7 @@
 
 '''
-Machine Learning Program to Predict Survival in Titanic Ship
-Program domestrate how to train  Logistical Regression to predict outcomes 
+Machine Learning Program to Predict Housing Prices
+Program domestrate how to train  Linear Regression to predict housing prices
 Data        ---  5000 samples of housing data 
 Features    ---   Average Area Income, Average Area House Age, Average Area No of Rooms, Area Population
 Target      ---  Price
@@ -17,13 +17,15 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
+
 def load_training_data():
-	'''
-    Explore data - relationship between different variables
+    '''
+    Load training data from csv file
+    output -- training set in dataframe format
 
     '''
-	USAhousing = pd.read_csv('USA_Housing.csv')
-	return USAhousing
+    train = pd.read_csv('USA_Housing.csv')
+    return train
 
 def explore_data(USAhousing):
 	'''
