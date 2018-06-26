@@ -1,7 +1,6 @@
 # ML-Linear-Regression
 Linear Regression Models
-# ML-LogisticalRegression
-Logistical Regression Models
+
 
 In this folder, I present my work on two different prediction problems using ML Linear Regression
 
